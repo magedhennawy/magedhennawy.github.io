@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { BookComponent } from "./book/book.component";
 
 const routes: Routes = [
 	{
@@ -10,6 +11,12 @@ const routes: Routes = [
 		path: "",
 		redirectTo: "",
 		pathMatch: "full"
+	},
+	{
+		path: "miriam",
+		// redirectTo: "/miriam",
+		pathMatch: "full",
+		component: BookComponent
 	}
 ];
 

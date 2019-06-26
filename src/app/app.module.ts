@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from "./app.component";
 import { ListModule, RadioModule, GridModule } from "carbon-components-angular";
+import { BookModule } from "./book/book.module";
 
 @NgModule({
 	declarations: [
@@ -20,7 +21,8 @@ import { ListModule, RadioModule, GridModule } from "carbon-components-angular";
 		AppRoutingModule,
 		ListModule,
 		RadioModule,
-		GridModule
+		GridModule,
+		BookModule
 	],
 	bootstrap: [AppComponent]
 })

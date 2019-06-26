@@ -1,8 +1,11 @@
 <div #container class="container carbon--theme--g100">
 	<div class="demo-content" ibmGrid>
 		<div ibmRow>
-			<div ibmCol [columnNumbers]="{'lg':6, 'md':12, 'sm': 12}">
+			<div ibmCol [columnNumbers]="{'lg':11, 'md':11, 'sm': 11}">
 				<h1 class="title">Maged<br>Hennawy</h1>
+			</div>
+			<div ibmCol [columnNumbers]="{'lg':1, 'md':1, 'sm': 1}">
+				<a routerLink="/miriam" class="hidden">For Miriam</a>
 			</div>
 		</div>
 		<div ibmRow>
@@ -30,6 +33,6 @@
 				</ul>
 			</div>
 		</div>
-		<router-outlet></router-outlet>
 	</div>
+	<router-outlet></router-outlet>
 </div>
