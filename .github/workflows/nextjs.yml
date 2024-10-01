@@ -92,6 +92,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      NEXT_PUBLIC_RESUME_LINK: ${{ secrets.NEXT_PUBLIC_RESUME_LINK }}
+      ADOBE_CLIENT_ID: ${{ secrets.ADOBE_CLIENT_ID }}
     runs-on: ubuntu-latest
     steps:
       - name: Configure Pages
