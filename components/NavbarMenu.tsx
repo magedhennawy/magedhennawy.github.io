@@ -48,7 +48,7 @@ function NavbarMenu({ isMenuOpen, toggleMenu }: MenuProps) {
             className="text-lg md:text-xl w-full text-white block py-2 px-4 hover:bg-gray-700 ease-in-out duration-200 hover:text-blue-500"
             onClick={toggleMenu}
           >
-            Résumé
+            Resume
           </button>
         </Link>
         <Link legacyBehavior href="/education">

@@ -28,7 +28,7 @@ function EducationCard({
   gpa,
   links = [],
   subschoolDescription,
-  location = 'Atlanta, GA',
+  location = 'Toronto, ON',
 }: EducationCardProps) {
   return (
     <Fade triggerOnce>
@@ -83,9 +83,6 @@ function EducationCard({
         </h4>
         <div className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800">
           {eduDescription}
-        </div>
-        <div className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-800">
-          <b> GPA: </b> {gpa}
         </div>
       </div>
     </Fade>

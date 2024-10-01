@@ -580,7 +580,7 @@ function Home() {
                   'shadowText text-sm sm:text-base md:text-lg mt-2 text-center transition-all ease-in-out duration-200 text-white'
                 }
               >
-                Python, Java, C#, JavaScript/TypeScript Full-Stack Entry-Level
+                JavaScript/TypeScript Full-Stack, SQL, Python, Java, C#, 
                 Software Developer.
               </p>
 
@@ -589,20 +589,20 @@ function Home() {
                   'shadowText text-sm sm:text-base md:text-lg mt-2 text-center transition-all ease-in-out duration-200 text-white'
                 }
               >
-                Interests/Passions include AI/ML, Game Development,
-                Cybersecurity, Reverse Engineering, and Web/Application
-                Development.
+                Interests/Passions include Web/Application
+                Development, AI/ML, Game Development,
+                Reverse Engineering, Cybersecurity.
               </p>
               <p
                 className={
                   'shadowText text-sm sm:text-base md:text-lg mt-2 text-center transition-all ease-in-out duration-200 text-white'
                 }
               >
-                Always in pursuit of creating impactful and purposeful works 🚀
+                Always in pursuit of creating impactful and purposeful work 🚀
               </p>
               <div className="flex justify-center mt-4 space-x-2 sm:space-x-4 md:space-x-4">
                 <a
-                  href="https://github.com/Kevin-Kwan"
+                  href="https://github.com/magedhennawy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white transition-transform ease-in-out duration-200 hover:scale-115 sm:hover:scale-130 md:hover:scale-150 hover:text-blue-500"
@@ -610,7 +610,7 @@ function Home() {
                   <FaGithub size={24} />
                 </a>
                 <a
-                  href="https://linkedin.com/in/kevinkwan3"
+                  href="https://www.linkedin.com/in/magedhennawy/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white transition-transform ease-in-out duration-200 hover:scale-115 sm:hover:scale-130 md:hover:scale-150 hover:text-blue-500"

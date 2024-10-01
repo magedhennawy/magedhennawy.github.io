@@ -21,29 +21,34 @@ function Skills() {
           </p>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 mt-3 bg-blue-100 rounded-lg p-4">
             <TechLogo
-              href="https://git-scm.com/"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1280px-Git-logo.svg.png"
-              alt="Git"
+              href="https://angular.dev/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/512px-Angular_full_color_logo.svg.png"
+              alt="Angular"
             />
             <TechLogo
-              href="https://python.org"
-              src="https://seeklogo.com/images/P/python-logo-C50EED1930-seeklogo.com.png"
-              alt="Python"
+              href="https://vuejs.org/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/512px-Vue.js_Logo_2.svg.png"
+              alt="VueJS"
             />
             <TechLogo
-              href="https://www.java.com"
-              src="https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png"
-              alt="Java"
+              href="https://react.dev/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+              alt="React"
             />
             <TechLogo
-              href="https://dotnet.microsoft.com/en-us/languages/csharp"
-              src="https://www.cdnlogo.com/logos/c/27/c.svg"
-              alt="C#"
+              href="https://nextjs.org/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/394px-Nextjs-logo.svg.png"
+              alt="Next.js"
             />
             <TechLogo
-              href="https://unity.com/"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Unity_2021.svg/1200px-Unity_2021.svg.png"
-              alt="Unity"
+              href="https://tailwindcss.com/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tailwind_CSS_logo.svg/2560px-Tailwind_CSS_logo.svg.png"
+              alt="Tailwind CSS"
+            />
+            <TechLogo
+              href="https://getbootstrap.com/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png"
+              alt="Boostrap CSS"
             />
             <TechLogo
               href="https://nodejs.org/"
@@ -70,18 +75,6 @@ function Skills() {
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/600px-CSS3_logo_and_wordmark.svg.png"
               alt="CSS"
             />
-            {/* GitHub */}
-            <TechLogo
-              href="https://www.github.com/"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"
-              alt="GitHub"
-            />
-            {/* GitLab */}
-            <TechLogo
-              href="https://www.gitlab.com/"
-              src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-512.png"
-              alt="GitLab"
-            />
             <TechLogo
               href="https://www.mysql.com/"
               src="https://upload.wikimedia.org/wikipedia/labs/8/8e/Mysql_logo.png"
@@ -93,24 +86,52 @@ function Skills() {
               alt="MongoDB"
             />
             <TechLogo
+              href="https://www.postgresql.org/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/540px-Postgresql_elephant.svg.png"
+              alt="PostgreSQL"
+            />
+            {/* GitHub */}
+            <TechLogo
+              href="https://www.github.com/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"
+              alt="GitHub"
+            />
+            <TechLogo
+              href="https://git-scm.com/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1280px-Git-logo.svg.png"
+              alt="Git"
+            />
+            {/* GitLab */}
+            <TechLogo
+              href="https://www.gitlab.com/"
+              src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-512.png"
+              alt="GitLab"
+            />
+            <TechLogo
+              href="https://python.org"
+              src="https://seeklogo.com/images/P/python-logo-C50EED1930-seeklogo.com.png"
+              alt="Python"
+            />
+            <TechLogo
+              href="https://www.java.com"
+              src="https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png"
+              alt="Java"
+            />
+            <TechLogo
+              href="https://dotnet.microsoft.com/en-us/languages/csharp"
+              src="https://www.cdnlogo.com/logos/c/27/c.svg"
+              alt="C#"
+            />
+            <TechLogo
+              href="https://unity.com/"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Unity_2021.svg/1200px-Unity_2021.svg.png"
+              alt="Unity"
+            />
+
+            <TechLogo
               href="https://www.cloudflare.com/"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/2560px-Cloudflare_Logo.svg.png"
               alt="Cloudflare"
-            />
-            <TechLogo
-              href="https://react.dev/"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
-              alt="React"
-            />
-            <TechLogo
-              href="https://nextjs.org/"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/394px-Nextjs-logo.svg.png"
-              alt="Next.js"
-            />
-            <TechLogo
-              href="https://tailwindcss.com/"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Tailwind_CSS_logo.svg/2560px-Tailwind_CSS_logo.svg.png"
-              alt="Tailwind CSS"
             />
             {/* docker */}
             <TechLogo
@@ -143,11 +164,6 @@ function Skills() {
               href="https://matlab.mathworks.com/"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/800px-Matlab_Logo.png"
               alt="MATLAB"
-            />
-            <TechLogo
-              href="https://www.lua.org/"
-              src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg"
-              alt="Lua"
             />
           </div>
         </div>

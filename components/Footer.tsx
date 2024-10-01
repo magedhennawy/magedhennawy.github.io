@@ -12,7 +12,7 @@ function Footer() {
         <p className="text-center text-sm sm:text-base">
           <Link
             legacyBehavior
-            href="https://github.com/Kevin-Kwan/portfolio-nextjs"
+            href="https://github.com/magedhennawy/magedhennawy.github.io"
           >
             <a className="text-blue-300 hover:underline transition-colors ease-in-out hover:text-blue-500">
               Custom Made by Maged Hennawy

@@ -21,6 +21,9 @@ function Resume({ adobeClientId }: ResumeProps) {
         clientId: adobeClientId,
         divId: 'adobe-dc-view',
       });
+
+      console.log(process.env.NEXT_PUBLIC_RESUME_LINK);
+      // process.env.NEXT_PUBLIC_RESUME_LINK = '/documents/MagedResume2024.pdf'
       adobeDCView.previewFile(
         {
           content: {
@@ -68,7 +71,7 @@ function Resume({ adobeClientId }: ResumeProps) {
   return (
     <div>
       <Head>
-        <title>Maged Hennawy | Résumé</title>
+        <title>Maged Hennawy | Resume</title>
       </Head>
       <main
         className="flex-1 p-4 flex flex-col items-center justify-center"

@@ -72,7 +72,7 @@ function Navbar({ fixed = true, isMenuOpen, toggleMenu }: NavbarProps) {
         <div className="flex justify-end">
           <Link legacyBehavior href="/resume">
             <a className="text-white mx-4 text-lg hover:text-2xl transition-fontSize duration-200 ease-in-out hover:text-blue-500 text-center">
-              Résumé
+              Resume
             </a>
           </Link>
           <Link legacyBehavior href="/education">
@@ -99,7 +99,7 @@ function Navbar({ fixed = true, isMenuOpen, toggleMenu }: NavbarProps) {
       </div>
       <div className="flex items-center ml-auto">
         <a
-          href="https://github.com/Kevin-Kwan"
+          href="https://github.com/magedhennawy"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300 transition-transform ease-in-out duration-200 hover:scale-150 hover:text-blue-500"
@@ -107,7 +107,7 @@ function Navbar({ fixed = true, isMenuOpen, toggleMenu }: NavbarProps) {
           <FaGithub className="h-6 w-6" />
         </a>
         <a
-          href="https://www.linkedin.com/in/kevinkwan3"
+          href="https://www.linkedin.com/in/magedhennawy"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300 transition-transform ease-in-out duration-200 hover:scale-150 hover:text-blue-500 ml-4 mr-4"

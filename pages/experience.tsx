@@ -56,7 +56,7 @@ function Experience() {
                   APIs, with the aim of enhancing tourists&apos; experiences by
                   providing engaging conversations, accurate and up-to-date
                   answers, live data, and recommendations for Atlanta&apos;s
-                  attractions (World of Coca-Cola, Zoo Atlanta, Georgia
+                  attractions (World of Coca-Cola, Zoo Toronto, Ontario
                   Aquarium), hotels (like Marriott®), and restaurants.
                 </p>
 

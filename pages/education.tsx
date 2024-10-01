@@ -17,57 +17,36 @@ function Education() {
             associations, activities/societies, and awards/achievements.
           </p>
           <EducationCard
-            schoolName="Georgia Institute of Technology"
-            subschoolDescription="College of Computing"
-            dateRange="August 2021 - May 2024"
-            credential="Bachelor of Science in Computer Science with Highest Honors"
-            logoUrl="https://brand.gatech.edu/sites/default/files/inline-images/GTVertical_RGB.png"
+            schoolName="Coursera"
+            subschoolDescription="Advanced React by Meta"
+            dateRange="May 2020 - June 2021"
+            credential="Completed Course on Advanced React with certification"
+            location="Online"
+            logoUrl="https://pngimg.com/d/meta_PNG3.png"
             links={[
               {
-                url: 'https://www.gatech.edu/',
-                displayText: 'University Website',
+                url: 'https://www.coursera.org/learn/advanced-react',
+                displayText: 'Website',
               },
+            ]}
+          />
+          <EducationCard
+            schoolName="University Of Toronto"
+            subschoolDescription="Computer Science"
+            dateRange="August 2014 - May 2019"
+            credential="Bachelor of Science in Computer Science with Highest Honors"
+            logoUrl="https://diglib.org/wp-content/uploads/sites/3/2014/12/UofT_Logo.svg_-e1418677958967-300x123.png"
+            links={[
               {
-                url: 'https://www.cc.gatech.edu/',
-                displayText: 'College Website',
-              },
+                url: 'https://www.utoronto.ca/',
+                displayText: 'University Website',
+              }
             ]}
             eduDescription={
               <p>
-                <b>Threads:</b> Intelligence and Media
+                <b>Specialist:</b> Software Engineering
               </p>
             }
-            gpa="3.9, summa cum laude"
-          />
-          <EducationCard
-            schoolName="Gwinnett Technical College"
-            subschoolDescription="Dual Enrollment Program"
-            dateRange="May 2020 - June 2021"
-            credential="PC Repair and Network Technician Certificate"
-            location="Lawrenceville, GA"
-            logoUrl="https://gwinnetttech.edu/wp-content/uploads/2023/10/gtclogo_studentservices.jpg"
-            links={[
-              {
-                url: 'https://gwinnetttech.edu',
-                displayText: 'College Website',
-              },
-            ]}
-            gpa="4.0"
-          />
-          <EducationCard
-            schoolName="Gwinnett School of Mathematics, Science, and Technology"
-            subschoolDescription="High School"
-            dateRange="August 2017 - May 2021"
-            credential="High School Diploma with Honors"
-            location="Lawrenceville, GA"
-            logoUrl="https://upload.wikimedia.org/wikipedia/en/6/6f/Seal_of_GSMST.png"
-            links={[
-              {
-                url: 'https://www.gcpsk12.org/GSMST',
-                displayText: 'School Website',
-              },
-            ]}
-            gpa="4.211"
           />
         </div>
       </main>
