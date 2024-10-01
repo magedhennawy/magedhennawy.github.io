@@ -16,14 +16,13 @@ interface ResumeProps {
 function Resume({ adobeClientId }: ResumeProps) {
   const isMobile = useMediaQuery({ query: '(max-width: 846px)' });
   useEffect(() => {
+    console.log(process.env.ADOBE_CLIENT_ID);
+    console.log(process.env.NEXT_PUBLIC_RESUME_LINK);
     function initializeAdobeDCView() {
       var adobeDCView = new window.AdobeDC.View({
         clientId: adobeClientId,
         divId: 'adobe-dc-view',
       });
-
-      console.log(process.env.ADOBE_CLIENT_ID);
-      console.log(process.env.NEXT_PUBLIC_RESUME_LINK);
       // process.env.NEXT_PUBLIC_RESUME_LINK = '/documents/MagedResume2024.pdf'
       adobeDCView.previewFile(
         {
