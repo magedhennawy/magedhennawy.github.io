@@ -22,6 +22,7 @@ function Resume({ adobeClientId }: ResumeProps) {
         divId: 'adobe-dc-view',
       });
 
+      console.log(process.env.ADOBE_CLIENT_ID);
       console.log(process.env.NEXT_PUBLIC_RESUME_LINK);
       // process.env.NEXT_PUBLIC_RESUME_LINK = '/documents/MagedResume2024.pdf'
       adobeDCView.previewFile(
