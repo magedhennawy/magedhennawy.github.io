@@ -16,7 +16,7 @@ interface ResumeProps {
 function Resume({ adobeClientId }: ResumeProps) {
   const isMobile = useMediaQuery({ query: '(max-width: 846px)' });
   useEffect(() => {
-    console.log(process.env.ADOBE_CLIENT_ID);
+    console.log(process.env.NEXT_PUBLIC_ADOBE_CLIENT_ID);
     console.log(process.env.NEXT_PUBLIC_RESUME_LINK);
     function initializeAdobeDCView() {
       var adobeDCView = new window.AdobeDC.View({
@@ -99,7 +99,7 @@ function Resume({ adobeClientId }: ResumeProps) {
 }
 
 export async function getStaticProps() {
-  const adobeClientId = process.env.ADOBE_CLIENT_ID ?? null;
+  const adobeClientId = process.env.NEXT_PUBLIC_ADOBE_CLIENT_ID ?? null;
 
   return {
     props: {
