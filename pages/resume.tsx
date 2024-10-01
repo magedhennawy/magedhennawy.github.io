@@ -24,6 +24,7 @@ function Resume({ adobeClientId }: ResumeProps) {
         divId: 'adobe-dc-view',
       });
       // process.env.NEXT_PUBLIC_RESUME_LINK = '/documents/MagedResume2024.pdf'
+      
       adobeDCView.previewFile(
         {
           content: {
