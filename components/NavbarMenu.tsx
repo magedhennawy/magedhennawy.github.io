@@ -42,7 +42,7 @@ function NavbarMenu({ isMenuOpen, toggleMenu }: MenuProps) {
             About Me
           </button>
         </Link> */}
-        <Link legacyBehavior href={process.env.NEXT_PUBLIC_RESUME_LINK || '#'}>
+        {/* <Link legacyBehavior href={process.env.NEXT_PUBLIC_RESUME_LINK || '#'}>
           <button
             type="button"
             className="text-lg md:text-xl w-full text-white block py-2 px-4 hover:bg-gray-700 ease-in-out duration-200 hover:text-blue-500"
@@ -50,7 +50,7 @@ function NavbarMenu({ isMenuOpen, toggleMenu }: MenuProps) {
           >
             Resume
           </button>
-        </Link>
+        </Link> */}
         <Link legacyBehavior href="/education">
           <button
             type="button"

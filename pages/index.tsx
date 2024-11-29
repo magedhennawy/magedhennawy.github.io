@@ -574,25 +574,26 @@ function Home() {
               >
                 Maged Hennawy
               </p>
+              <p
+                className={
+                  'shadowText text-sm sm:text-base md:text-lg mt-2 text-center transition-all ease-in-out duration-200 text-white'
+                }
+              >
+                Full-Stack / Front-End Engineer with 6 years of experience building enterprise software, 
+                with a background in Computer Science and a passion for creating innovative and user-friendly applications.
+                Proficient in all stage of the software development life cycle, from concept to deployment. 
+                Expertise in front-end SPA and back-end RESTful API development, with a strong focus on performance, scalability, and maintainability.
+              </p>
 
               <p
                 className={
                   'shadowText text-sm sm:text-base md:text-lg mt-2 text-center transition-all ease-in-out duration-200 text-white'
                 }
               >
-                JavaScript/TypeScript Full-Stack, SQL, Python, Java, C#, 
+                JavaScript/TypeScript Full-Stack, SQL, NoSQL, React, Angular, Node.js, Express, NestJS, GraphQL, RESTful API, Docker, AWS, CI/CD. 
                 Software Developer.
               </p>
 
-              <p
-                className={
-                  'shadowText text-sm sm:text-base md:text-lg mt-2 text-center transition-all ease-in-out duration-200 text-white'
-                }
-              >
-                Interests/Passions include Web/Application
-                Development, AI/ML, Game Development,
-                Reverse Engineering, Cybersecurity.
-              </p>
               <p
                 className={
                   'shadowText text-sm sm:text-base md:text-lg mt-2 text-center transition-all ease-in-out duration-200 text-white'

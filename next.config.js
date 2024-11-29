@@ -4,7 +4,6 @@ const nextConfig = {
     remotePatterns: [
       { hostname: 'i.redd.it' },
       { hostname: 'github.com' },
-      { hostname: 'careers.publicissapient.com' },
       { hostname: 'media.licdn.com' },
       { hostname: 'encrypted-tbn0.gstatic.com' },
       { hostname: '1000logos.net' },
