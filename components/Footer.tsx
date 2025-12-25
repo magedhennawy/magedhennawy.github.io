@@ -1,42 +1,20 @@
 import Link from 'next/link';
 
 function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer
-      className="text-white p-2 sm:p-3"
-      style={{
-        background: 'linear-gradient(to right, #171F29, #3F4C6B, #171F29)',
-      }}
-    >
-      <div className="max-w-2xl mx-auto">
-        <p className="text-center text-sm sm:text-base">
-          <Link
-            legacyBehavior
-            href="https://github.com/magedhennawy/magedhennawy.github.io"
-          >
-            <a className="text-blue-300 hover:underline transition-colors ease-in-out hover:text-blue-500">
-              Custom Made by Maged Hennawy
+    <footer className="text-gray-500 p-4 bg-cyber-black/90 border-t border-neon-cyan/20 font-mono text-xs md:text-sm">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+        <p>
+          {'>'} MagedHennawy.portfolio_v2 --status stable
+        </p>
+        <p className="mt-2 md:mt-0">
+          <Link legacyBehavior href="https://github.com/magedhennawy/magedhennawy.github.io">
+            <a className="hover:text-neon-cyan transition-colors">
+              © {year} Built with Next.js & Tailwind
             </a>
-          </Link>{' '}
-          using{' '}
-          <a
-            href="https://nextjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-300 hover:underline transition-colors ease-in-out hover:text-blue-500"
-          >
-            Next.js
-          </a>{' '}
-          &{' '}
-          <a
-            href="https://tailwindcss.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-300 hover:underline transition-colors ease-in-out hover:text-blue-500"
-          >
-            Tailwind CSS
-          </a>{' '}
-          with love ❤️
+          </Link>
         </p>
       </div>
     </footer>

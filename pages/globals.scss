@@ -1,123 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-// Credits for the Star Background. https://codepen.io/sarazond/pen/LYGbwj
-@import '~compass-mixins/lib/compass/css3'; // n is number of stars required
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-  }
+  --background-start-rgb: 1, 8, 22;
+  --background-end-rgb: 1, 8, 22;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #010816;
+  color: #e5e7eb;
+  font-family: 'Fira Code', monospace;
+  overflow-x: hidden;
 }
 
-.custom-title {
-  background: linear-gradient(white, #8ba1b7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: 'Lato', sans-serif;
-  font-weight: 900;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #010816; 
+}
+::-webkit-scrollbar-thumb {
+  background: #00ffff; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00cccc; 
 }
 
-@function multiple-box-shadow($n) {
-  $value: '#{random(200)}vw #{random(500)}vh #FFF';
-
-  @for $i from 2 through $n {
-    $value: '#{$value}, #{random(200)}vw #{random(500)}vh #FFF';
-  }
-
-  @return unquote($value);
+/* Glowing Text */
+.glow-text-cyan {
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
+.glow-text-pink {
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
 }
 
-$shadows-small: multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big: multiple-box-shadow(100);
-
-#stars {
-  width: 0.1vh;
-  height: 0.1vh;
-  background: transparent;
-  box-shadow: $shadows-small;
-  animation: animStar 50s linear infinite;
-
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 100vh;
-    width: 0.1vh;
-    height: 0.1vh;
-    background: transparent;
-    box-shadow: $shadows-small;
-  }
+/* Terminal Container */
+.terminal-container {
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  background-color: rgba(1, 8, 22, 0.95);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-#stars2 {
-  width: 0.2vh;
-  height: 0.2vh;
-  background: transparent;
-  box-shadow: $shadows-medium;
-  animation: animStar 100s linear infinite;
-
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 100vh;
-    width: 0.2vh;
-    height: 0.2vh;
-    background: transparent;
-    box-shadow: $shadows-medium;
-  }
+.terminal-header {
+  background-color: rgba(0, 255, 255, 0.1);
+  border-bottom: 1px solid #00ffff;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-#stars3 {
-  width: 0.3vh;
-  height: 0.3vh;
-  background: transparent;
-  box-shadow: $shadows-big;
-  animation: animStar 150s linear infinite;
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
 
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 100vh;
-    width: 0.3vh;
-    height: 0.3vh;
-    background: transparent;
-    box-shadow: $shadows-big;
-  }
+/* Typing Cursor */
+.typing-cursor::after {
+  content: '_';
+  animation: blink 1s step-end infinite;
 }
 
-.shadowText {
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.gradientText {
-  background: linear-gradient(white, #8ba1b7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes animStar {
-  from {
-    transform: translateY(0px);
-  }
-
-  to {
-    transform: translateY(-100vh);
-  }
+@keyframes blink {
+  50% { opacity: 0; }
 }

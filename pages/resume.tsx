@@ -1,113 +1,91 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useMediaQuery } from 'react-responsive';
 
-declare global {
-  interface Window {
-    AdobeDC: any;
-    adobe_dc_sdk: any;
-    adobe_dc_view_sdk: any;
-  }
-}
-interface ResumeProps {
-  adobeClientId: string;
-}
-
-function Resume({ adobeClientId }: ResumeProps) {
+function Resume() {
   const isMobile = useMediaQuery({ query: '(max-width: 846px)' });
+  const [mounted, setMounted] = useState(false);
+  const resumeLink = process.env.NEXT_PUBLIC_RESUME_LINK || '/documents/MagedResume_June2025.pdf';
+
   useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_ADOBE_CLIENT_ID);
-    console.log(process.env.NEXT_PUBLIC_RESUME_LINK);
-    function initializeAdobeDCView() {
-      var adobeDCView = new window.AdobeDC.View({
-        clientId: adobeClientId,
-        divId: 'adobe-dc-view',
-      });
-      // process.env.NEXT_PUBLIC_RESUME_LINK = '/documents/MagedResume2024.pdf'
-      
-      adobeDCView.previewFile(
-        {
-          content: {
-            location: {
-              url: process.env.NEXT_PUBLIC_RESUME_LINK,
-            },
-          },
-          metaData: { fileName: 'MagedResume2024.pdf' },
-        },
-        {
-          embedMode: 'FULL_WINDOW',
-          defaultViewMode: 'FIT_WIDTH',
-          showFullScreen: true,
-          showAnnotationTools: false,
-          showZoomControl: true,
-          focusOnRendering: true,
-          showDownloadPDF: true,
-        }
-      );
-    }
+    setMounted(true);
+  }, []);
 
-    function loadViewerScript() {
-      if (window.AdobeDC?.View) {
-        setTimeout(initializeAdobeDCView, 100); // Delay the call to ensure the SDK is loaded
-      } else {
-        var viewerScript = document.createElement('script');
-        viewerScript.src =
-          'https://acrobatservices.adobe.com/view-sdk/viewer.js';
-        viewerScript.onload = function () {
-          setTimeout(initializeAdobeDCView, 100); // Delay the call to ensure the SDK is loaded
-        };
-        document.body.appendChild(viewerScript);
-      }
-    }
-
-    loadViewerScript();
-
-    return () => {
-      window.AdobeDC = undefined;
-      window.adobe_dc_sdk = undefined;
-      window.adobe_dc_view_sdk = undefined;
-    };
-  }, [adobeClientId]);
+  if (!mounted) return null;
 
   return (
-    <div>
+    <div className="min-h-screen flex items-center justify-center p-4">
       <Head>
         <title>Maged Hennawy | Resume</title>
       </Head>
-      <main
-        className="flex-1 p-4 flex flex-col items-center justify-center"
-        style={{ height: '100vh', paddingTop: '5rem' }}
-      >
-        <p className="text-white text-2xl font-bold mb-4 text-center">
-          {isMobile
-            ? 'It seems like you are on a mobile device! For a better experience, we recommend that you please '
-            : 'If you have troubles viewing the PDF, you can '}
-          <a
-            href={process.env.NEXT_PUBLIC_RESUME_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 underline"
-          >
-            click here to view/download it
-          </a>
-          .
-        </p>
-        {!isMobile && <div id="adobe-dc-view" className="max-w-5xl mx-auto" />}
-      </main>
+      <div className="w-full max-w-6xl terminal-container h-[85vh] flex flex-col">
+        {/* Terminal Header */}
+        <div className="terminal-header">
+          <div className="terminal-dot dot-red"></div>
+          <div className="terminal-dot dot-yellow"></div>
+          <div className="terminal-dot dot-green"></div>
+          <span className="ml-4 text-xs text-gray-400 font-mono">maged@portfolio:~/documents/resume.pdf</span>
+        </div>
+
+        {/* Terminal Body */}
+        <div className="flex-1 bg-cyber-black p-4 overflow-hidden relative font-mono text-gray-300 flex flex-col">
+          <div className="mb-4">
+            <span className="text-neon-cyan mr-2">➜</span>
+            <span className="text-terminal-green">~</span>
+            <span className="text-white"> open MagedResume_June2025.pdf</span>
+          </div>
+
+          <div className="flex-1 relative w-full h-full border border-gray-700/50 rounded bg-white/5 overflow-hidden">
+            {/* Fallback Link (or main view for mobile) */}
+            {(isMobile) && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 bg-cyber-black">
+                <p className="mb-6 text-yellow-500">
+                  {'>'} Detect mobile device. Rendering optimized download link...
+                </p>
+                <a
+                  href={resumeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-neon-cyan text-neon-cyan px-6 py-3 rounded hover:bg-neon-cyan hover:text-black transition-all duration-300 shadow-neon-cyan font-bold"
+                >
+                  {'>'} wget MagedResume2024.pdf
+                </a>
+              </div>
+            )}
+
+            {/* Native Iframe Embed */}
+            {!isMobile && (
+              <object
+                data={resumeLink}
+                type="application/pdf"
+                className="w-full h-full"
+              >
+                <iframe
+                  src={`https://docs.google.com/viewer?url=${encodeURIComponent('https://magedhennawy.github.io' + resumeLink)}&embedded=true`}
+                  className="w-full h-full border-none"
+                  title="Resume PDF"
+                >
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-cyber-black">
+                    <p className="mb-6 text-yellow-500">
+                      {'>'} Browser does not support PDF embedding.
+                    </p>
+                    <a
+                      href={resumeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border border-neon-cyan text-neon-cyan px-6 py-3 rounded hover:bg-neon-cyan hover:text-black transition-all duration-300 shadow-neon-cyan font-bold"
+                    >
+                      {'>'} wget MagedResume2024.pdf
+                    </a>
+                  </div>
+                </iframe>
+              </object>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
-export async function getStaticProps() {
-  const adobeClientId = process.env.NEXT_PUBLIC_ADOBE_CLIENT_ID ?? null;
-
-  return {
-    props: {
-      adobeClientId,
-    },
-    // revalidate: 300,
-  };
-}
-
 export default Resume;
-// export const runtime = 'experimental-edge';

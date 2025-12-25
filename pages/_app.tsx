@@ -7,19 +7,21 @@ import Head from 'next/head';
 import StarBackground from '../components/StarBackground';
 import Layout from '../components/RootLayout';
 
-const inter = Inter({ subsets: ['latin'] });
+// import { Inter } from 'next/font/google'; // Removing Inter
+// const inter = Inter({ subsets: ['latin'] }); // Removing Inter
 
 function App({ Component, pageProps }: AppProps) {
   const router: NextRouter = useRouter();
 
   return (
-    <main className={inter.className}>
-      <StarBackground />
+    <main className="font-mono bg-cyber-black min-h-screen text-white">
+      {/* <StarBackground /> Removed star background for cyber theme */}
       <AnimatePresence mode="wait">
         <div key={router.pathname} className="font-inter">
           <Head>
             <meta charSet="utf-8" />
             <title>Maged Hennawy | Software Engineering Portfolio</title>
+            <link rel="icon" href="/favicon.ico" />
             <meta
               name="description"
               content="A custom-made portfolio showcasing a talented, entry-level software engineer based in Toronto, Ontario and his skills, experience, projects, and more."
