@@ -24,7 +24,7 @@ function App({ Component, pageProps }: AppProps) {
             <link rel="icon" href="/favicon.ico" />
             <meta
               name="description"
-              content="A custom-made portfolio showcasing a talented, senion software engineer based in Toronto, Ontario and his skills, experience, projects, and more."
+              content="A custom-made portfolio showcasing a talented, senior software engineer based in Toronto, Ontario and his skills, experience, projects, and more."
             />
             <meta
               name="keywords"
