@@ -24,7 +24,7 @@ function App({ Component, pageProps }: AppProps) {
             <link rel="icon" href="/favicon.ico" />
             <meta
               name="description"
-              content="A custom-made portfolio showcasing a talented, entry-level software engineer based in Toronto, Ontario and his skills, experience, projects, and more."
+              content="A custom-made portfolio showcasing a talented, senion software engineer based in Toronto, Ontario and his skills, experience, projects, and more."
             />
             <meta
               name="keywords"
@@ -41,7 +41,7 @@ function App({ Component, pageProps }: AppProps) {
             />
             <meta
               property="og:description"
-              content="A custom-made portfolio website made by Maged Hennawy, a talented, entry-level software engineer based in Toronto, Ontario, to showcase his skills, experience, projects, and more."
+              content="A custom-made portfolio website made by Maged Hennawy, a talented,  software engineer based in Toronto, Ontario, to showcase his skills, experience, projects, and more."
             />
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://magedhennawy.github.io/" />
