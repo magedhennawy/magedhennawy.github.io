@@ -26,7 +26,7 @@ function ExperienceCard({
   jobDescription,
   links = [],
   subCompanyDescription,
-  location = 'Toronto, ON',
+  location = 'Atlanta, GA',
 }: ExperienceCardProps) {
   return (
     <Fade triggerOnce>

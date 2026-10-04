@@ -1,39 +1,26 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './data/**/*.ts'],
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       colors: {
-        'cyber-black': '#010816',
-        'neon-cyan': '#00ffff',
-        'neon-pink': '#ff00ff',
-        'terminal-green': '#00ff00',
-        'terminal-gray': '#1F2937',
+        bg: 'rgb(var(--bg) / <alpha-value>)',
+        fg: 'rgb(var(--fg) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        line: 'rgb(var(--line) / <alpha-value>)',
+        panel: 'rgb(var(--panel) / <alpha-value>)',
+        frontend: 'rgb(var(--c-frontend) / <alpha-value>)',
+        backend: 'rgb(var(--c-backend) / <alpha-value>)',
+        cloud: 'rgb(var(--c-cloud) / <alpha-value>)',
+        security: 'rgb(var(--c-security) / <alpha-value>)',
+        ai: 'rgb(var(--c-ai) / <alpha-value>)',
       },
       fontFamily: {
-        mono: ['"Fira Code"', 'monospace'],
-        inter: ['Inter', 'sans-serif'],
-      },
-      screens: {
-        md: '916px',
-      },
-      transitionProperty: {
-        height: 'height',
-        spacing: 'margin, padding',
-        fontSize: 'font-size',
-      },
-      boxShadow: {
-        'neon-cyan': '0 0 5px #00ffff, 0 0 10px #00ffff',
-        'neon-pink': '0 0 5px #ff00ff, 0 0 10px #ff00ff',
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
     },
   },

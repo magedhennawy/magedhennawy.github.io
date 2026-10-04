@@ -1,31 +1,20 @@
-import React, { useCallback } from 'react';
-import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
 
-function NotFoundPage() {
-  const router = useRouter();
-
-  const handleBackClick = useCallback(() => {
-    router.push('/');
-  }, [router]);
-
+export default function NotFound() {
   return (
-    <div className="absolute inset-0 flex items-center justify-center text-center">
-      <div className="flex flex-col items-center">
-        <h1 className="text-6xl font-bold">404</h1>
-        <p className="mt-2 text-lg">Page Not Found</p>
-        <p className="mt-2">
-          Looks like you&apos;ve followed a broken link or entered a URL that
-          doesn&apos;t exist on this site.
-        </p>
-        <button
-          onClick={handleBackClick}
-          className="mt-4 w-64 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-        >
-          Back to our site
-        </button>
-      </div>
-    </div>
+    <>
+      <Head>
+        <title>Page not found | Maged Hennawy</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <main className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-center">
+        <p className="eyebrow hud-tick">Signal lost · 404</p>
+        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-6xl">This page is off the radar.</h1>
+        <Link href="/" className="btn btn-primary mt-8">
+          Return to base
+        </Link>
+      </main>
+    </>
   );
 }
-
-export default NotFoundPage;
