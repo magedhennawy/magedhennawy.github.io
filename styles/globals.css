@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* colour tokens as RGB triplets for Tailwind alpha */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: 5 7 13;
+  --bg-2: 10 15 26;
+  --fg: 230 237 246;
+  --muted: 154 167 186;
+  --accent: 94 234 212;
+  --line: 148 163 184;
+  --panel: 9 13 23;
+  --c-frontend: 96 165 250;
+  --c-backend: 167 139 250;
+  --c-cloud: 52 211 153;
+  --c-security: 251 113 133;
+  --c-ai: 251 191 36;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: 244 246 249;
+  --bg-2: 232 236 242;
+  --fg: 11 18 32;
+  --muted: 70 83 106;
+  --accent: 15 118 110;
+  --line: 71 85 105;
+  --panel: 255 255 255;
+  --c-frontend: 29 78 216;
+  --c-backend: 109 40 217;
+  --c-cloud: 4 120 87;
+  --c-security: 190 18 60;
+  --c-ai: 180 83 9;
+}
+
+@layer base {
+  html {
+    background: rgb(var(--bg));
+    color: rgb(var(--fg));
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background:
+      radial-gradient(1200px 800px at 80% -10%, rgb(var(--accent) / 0.08), transparent 60%),
+      radial-gradient(900px 700px at -10% 110%, rgb(var(--c-backend) / 0.07), transparent 60%),
+      rgb(var(--bg));
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: rgb(var(--accent) / 0.3);
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-line/15 bg-panel/80 shadow-[0_10px_40px_-20px_rgb(0_0_0/0.6)];
+    pointer-events: auto;
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.22em] text-accent;
+  }
+  .hud-tick::before {
+    content: '';
+    @apply mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-accent;
+    box-shadow: 0 0 10px rgb(var(--accent));
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line/20 px-2.5 py-0.5 font-mono text-[11px] text-muted;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-full border border-line/25 px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent;
+    pointer-events: auto;
+  }
+  .btn-primary {
+    @apply border-transparent bg-accent text-bg hover:bg-accent/85 hover:text-bg;
+  }
+  .hud-label {
+    @apply whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.18em] text-fg/80;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 0 0 8px rgb(var(--bg));
+  }
+  .hud-label[data-on='true'] {
+    @apply text-accent;
+  }
+}
+
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  @apply sr-only;
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.45in 0.5in;
+  }
+  /* color-scheme light, otherwise page margins print dark */
+  :root,
+  :root[data-theme] {
+    color-scheme: light;
+    --bg: 255 255 255;
+    --fg: 0 0 0;
+    --muted: 60 60 60;
+    --accent: 15 90 85;
+    --panel: 255 255 255;
+  }
+  html,
+  body {
+    background: #fff !important;
+    color: #000;
+  }
+  .no-print,
+  canvas {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  #main {
+    font-size: 10.5pt;
+  }
+  #main h1 {
+    font-size: 26pt !important;
+    line-height: 1.05 !important;
+  }
+  #main h2,
+  #main h3 {
+    font-size: 13pt !important;
+    margin-top: 4pt !important;
+  }
+  #main .panel {
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+  #main section {
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 0 10pt !important;
+  }
+  #main article,
+  #main li {
+    break-inside: avoid;
+  }
+}
+.print-only {
+  display: none;
+}

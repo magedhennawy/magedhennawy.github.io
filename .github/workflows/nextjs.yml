@@ -1,10 +1,7 @@
-# Modified Versionn of the sample workflow for building and deploying a Next.js site to GitHub Pages
-# Expect there's no deployment to GitHub Pages
-# And the purpose of this workflow is to ensure there's no build errors (for my purposes at least)
-# CloudFlare Pages handles continuous deployment.
+# Builds the static export (next build + CSP post-processing) and deploys it to GitHub Pages.
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Checking for No Build Errors (Next.js)
+name: Build & deploy to GitHub Pages (Next.js)
 
 on:
   push:
@@ -30,9 +27,6 @@ concurrency:
 jobs:
   # Build job
   build:
-    env:
-      NEXT_PUBLIC_RESUME_LINK: ${{ secrets.NEXT_PUBLIC_RESUME_LINK }}
-      NEXT_PUBLIC_ADOBE_CLIENT_ID: ${{ secrets.ADOBE_CLIENT_ID }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -79,8 +73,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Lint & typecheck
+        run: ${{ steps.detect-package-manager.outputs.manager }} run lint && ${{ steps.detect-package-manager.outputs.manager }} run typecheck
+      - name: Build with Next.js (+ CSP post-processing)
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -88,6 +84,8 @@ jobs:
 
   # Deployment job
   deploy:
+    # PRs only build; deploys happen on push/manual runs
+    if: github.event_name != 'pull_request'
     needs: build
     permissions:
       pages: write
@@ -95,9 +93,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    env:
-      NEXT_PUBLIC_RESUME_LINK: ${{ secrets.NEXT_PUBLIC_RESUME_LINK }}
-      NEXT_PUBLIC_ADOBE_CLIENT_ID: ${{ secrets.ADOBE_CLIENT_ID }}
     runs-on: ubuntu-latest
     steps:
       - name: Configure Pages
